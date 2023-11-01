@@ -22,15 +22,27 @@
     <section id="login" class="form-login">
         <h5>Inicio de sesión Cajero GU</h5>
 
-        <input type="text" name="usuario" id="usuario" class="controls" placeholder="Usuario">
-        <input type="password" name="contrasena" id="contrasena" class="controls" placeholder="Contraseña">
-        <input type="button" id="btnIniciar" class="buttons" value="Ingresar">
+        <input type="text" name="username" id="username" class="controls" placeholder="Usuario">
+        <input type="password" name="password" id="password" class="controls" placeholder="Contraseña">
+        <input type="button" id="login-button" class="buttons" value="Ingresar">
 
         <p><a href="#">¿Olvidastes tu Contraseña?</a></p>
 
-        <p><img src="./assets/view/image/google.png" alt="" class="image-google"><a href="#"> Registrate con Google</a></p>
+        <div class="socials-row">
+            <a href="#" title="Use Google">
+                <img src="/assets/view/image/google.png" alt="Google">
+                Sign up with Google
+            </a>
+            <a href="#" title="Use Apple">
+                <img src="/assets/view/image/apple.png" alt="Apple">
+                Sign up with Apple
+            </a>
+        </div>
     </section>
+    <p id="message" style="color: white;"></p>
 
+    <!--Conexión del controller-->
+    <script type="module" src="./assets/controller/ControllerLogin.js"></script>
 </body>
 
 </html>
