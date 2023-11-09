@@ -8,7 +8,7 @@ inputs.forEach(function (input) {
 
 // Validaciones de Expresiciones Regulares
 let username = /^[a-zA-ZÀ-ÿ\s]{1,40}$/
-let password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm
+let password = /.*?.(?=[1-9])/
 
 function validarFormulario(e) {
     console.log(e)
@@ -32,130 +32,63 @@ function validarFormulario(e) {
     }
 }
 
-// Inicio de Sesión
+// Control del Inicio de Sesión
 let loginButton = document.getElementById('loginButton')
 loginButton.addEventListener('click', function () {
 
     let username = document.getElementById('username').value
     let password = document.getElementById('password').value
-    const message = document.getElementById('message');
-    let intentos = 5
+    // const message = document.getElementById('message');
+    let intentos = 3
 
     while (intentos > 0) {
         //Validación del Usuario 1
         if (username == 'Administrador001') {
-            if (password == 'Administrador.001') {
+            if (password == '1526') {
+
+                //Impresiones en consola
                 console.log('Inicio de sesión exitoso. ' + username)
 
                 //Configuración de alerta
-                const AlertConfig = document.getElementById('liveToastGuardar')
-                const toastGuardar = bootstrap.Toast.getOrCreateInstance(AlertConfig)
-                toastGuardar.show()
+                const AlertConfig = document.getElementById('liveToastCorrecto')
+                const toastCorrecto = bootstrap.Toast.getOrCreateInstance(AlertConfig)
+                toastCorrecto.show()
 
-                //Control de ventanas 
+                //Control de ventanas
+                document.getElementById('sound-wave').style.display = 'flex'
                 setTimeout(() => {
+                    document.getElementById('sound-wave').style.display = 'none'
                     document.getElementById('login').style.display = 'none'
                     document.getElementById('panel').style.display = 'block'
-                }, 3000);
+                }, 5000);
                 break;
-                
+
             } else {
                 intentos--
                 if (intentos > 0) {
+
+                    //Impresiones en consola
                     console.log('Datos incorrectos. Te quedan ' + intentos)
                     console.log('Acceso denegado')
 
                     //Configuración de alerta
-                    const AlertConfig = document.getElementById('liveToastCancelar')
-                    const toastCancelar = bootstrap.Toast.getOrCreateInstance(AlertConfig)
-                    toastCancelar.show()
-                } else {
+                    const AlertConfig = document.getElementById('liveToastIncorrecto')
+                    const toastIncorrecto = bootstrap.Toast.getOrCreateInstance(AlertConfig)
+                    toastIncorrecto.show()
+
+                }else {
+
+                    //Impresiones en consola
                     console.log('Has excedido el número máximo de intentos. Cuenta bloqueda.')
                     console.log('Acceso denegado')
-                    const AlertConfig = document.getElementById('liveToastCancelarBloqueda')
-                    const toastCancelarBloqueda = bootstrap.Toast.getOrCreateInstance(AlertConfig)
-                    toastCancelarBloqueda.show()
-                }
 
+                    //Configuración de alerta
+                    const AlertConfig = document.getElementById('liveToastBloqueda')
+                    const toastBloqueda = bootstrap.Toast.getOrCreateInstance(AlertConfig)
+                    toastBloqueda.show()
+
+                }
             }
-        }
+        } 
     }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { UserModel } from '../model/ModelLogin.js';
-// console.table(UserModel.users)
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     const usernameInput = document.getElementById('username');
-//     const passwordInput = document.getElementById('password');
-//     const btnIniciar = document.getElementById('login-button');
-//     const message = document.getElementById('message');
-
-//     btnIniciar.addEventListener('click', () => {
-//         const username = usernameInput.value;
-//         const password = passwordInput.value;
-
-//         const usernameRegex = usernameInput.value;
-//         const passwordRegex = passwordInput.value;
-
-//         const userRegex = UserModel.authenticateRegex(usernameRegex, passwordRegex);
-
-//         if (userRegex) {
-//             message.textContent = 'Usuario o contraseña no cumplen con los requisitos';
-//         } else {
-//             message.textContent = 'Usuario o contraseña no cumplen con los requisitos';
-//         }
-
-//         // if (!UserModel.usernameRegex.test(username) || !UserModel.passwordRegex.test(password)) {
-//         //     message.textContent = 'Usuario o contraseña no cumplen con los requisitos';
-//         //     return;
-//         // }
-
-//         const user = UserModel.authenticate(username, password);
-
-//         if (user) {
-//             message.textContent = 'Inicio de sesión exitoso';
-//         } else {
-//             message.textContent = 'Usuario o contraseña invalido';
-//         }
-//     });
-// });

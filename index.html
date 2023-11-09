@@ -27,13 +27,13 @@
         <h5>Inicio de sesión Cajero GU</h5>
 
         <input type="text" name="username" id="username" class="controls" placeholder="Usuario" autocomplete="name">
-        <input type="text" name="password" id="password" class="controls" placeholder="Contraseña">
+        <input type="password" name="password" id="password" class="controls" placeholder="Contraseña">
         <input type="button" id="loginButton" class="buttons" value="Ingresar">
 
         <p><a href="#">¿Olvidastes tu Contraseña?</a></p>
 
         <div class="socials-row">
-            <a href="#" title="Use Google">
+            <a href="#" title="Use Google" id="register-google">
                 <img src="/assets/view/image/google.png" alt="Google">
                 Sign up with Google
             </a>
@@ -45,13 +45,23 @@
     </section>
     <!-- <p id="message"></p> -->
 
+    <!--Panel Home-->
     <main id="panel" class="panel">
         <h1>Bienvenidos al Cajero GU</h1>
     </main>
 
+    <!--Spinner Loading-->
+    <div id="sound-wave" class="sound-wave">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
     <!--Alerta de acceso correcto login-->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="liveToastGuardar" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+        <div id="liveToastCorrecto" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
             style="background: #ABEBC6;">
             <div class="toast-header">
                 <img src="./assets/view/image/guardado.png" class="rounded me-2" alt="guardado" height="20px"
@@ -66,8 +76,8 @@
     </div>
 
     <!--Alerta de acceso incorrecto login -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="liveToastCancelar" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+    <div class="toast-container position-fixed bottom-0 end-1 p-3">
+        <div id="liveToastIncorrecto" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
             style="background: #F06565;">
             <div class="toast-header">
                 <img src="./assets/view/image/error.png" class="rounded me-2" alt="error" height="20px" width="20px">
@@ -82,7 +92,7 @@
 
     <!--Alerta de acceso incorrecto cuenta bloqueada -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="liveToastCancelarBloqueda" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+        <div id="liveToastBloqueda" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
             style="background: #F06565;">
             <div class="toast-header">
                 <img src="./assets/view/image/error.png" class="rounded me-2" alt="error" height="20px" width="20px">
@@ -94,12 +104,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
 
     <!--Conexión del controller-->
     <script type="module" src="./assets/controller/ControllerLogin.js"></script>
