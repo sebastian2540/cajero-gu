@@ -76,7 +76,7 @@ loginButton.addEventListener('click', function () {
                     const toastIncorrecto = bootstrap.Toast.getOrCreateInstance(AlertConfig)
                     toastIncorrecto.show()
 
-                }else {
+                } else {
 
                     //Impresiones en consola
                     console.log('Has excedido el número máximo de intentos. Cuenta bloqueda.')
@@ -89,6 +89,36 @@ loginButton.addEventListener('click', function () {
 
                 }
             }
-        } 
+        }
     }
+})
+
+//Control del profile
+const profile = document.querySelector('.profile')
+const dropdown = document.querySelector('.dropdown__wrapper')
+
+profile.addEventListener('click', () => {
+    dropdown.classList.remove('none')
+    dropdown.classList.toggle('hide')
+})
+
+document.addEventListener("click", (event) => {
+    const isClickInsideDropdown = dropdown.contains(event.target)
+    const isProfileClicked = profile.contains(event.target)
+
+    if (!isClickInsideDropdown && !isProfileClicked) {
+        dropdown.classList.add('hide')
+        dropdown.classList.add('dropdown__wrapper--fade-in')
+    }
+})
+
+//Control de cerrar sesión
+const cerrarSesion = document.getElementById('cerrarSesion')
+cerrarSesion.addEventListener('click', function () {
+    document.getElementById('sound-wave').style.display = 'flex'
+    setTimeout(() => {
+        document.getElementById('sound-wave').style.display = 'none'
+        document.getElementById('login').style.display = 'block'
+        document.getElementById('panel').style.display = 'none'
+    }, 5000);
 })
