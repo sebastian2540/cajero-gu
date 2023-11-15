@@ -1,25 +1,25 @@
 export let usuarios = [
     {
         usuario: 'Administrador001',
-        contrasena: 'Administrador.001',
+        contrasena: '1526',
         id: 1
     },
 
     {
         usuario: 'Administrador002',
-        contrasena: 'Administrador.002',
+        contrasena: '1527',
         id: 2
     },
 
     {
         usuario: 'Cajero001',
-        contrasena: 'Cajero.001',
+        contrasena: '1528',
         id: 3
     },
 
     {
         usuario: 'Cajero002',
-        contrasena: 'Cajero.002',
+        contrasena: '1529',
         id: 4
     },
 ]

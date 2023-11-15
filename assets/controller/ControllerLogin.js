@@ -60,7 +60,7 @@ loginButton.addEventListener('click', function () {
                     document.getElementById('sound-wave').style.display = 'none'
                     document.getElementById('login').style.display = 'none'
                     document.getElementById('panel').style.display = 'block'
-                }, 5000);
+                }, 3000);
                 break;
 
             } else {
@@ -96,7 +96,6 @@ loginButton.addEventListener('click', function () {
 //Control del profile
 const profile = document.querySelector('.profile')
 const dropdown = document.querySelector('.dropdown__wrapper')
-
 profile.addEventListener('click', () => {
     dropdown.classList.remove('none')
     dropdown.classList.toggle('hide')
@@ -120,5 +119,28 @@ cerrarSesion.addEventListener('click', function () {
         document.getElementById('sound-wave').style.display = 'none'
         document.getElementById('login').style.display = 'block'
         document.getElementById('panel').style.display = 'none'
-    }, 5000);
+    }, 3000);
+})
+
+// Control de registerGoogle
+const registerGoogle = document.getElementById('registerGoogle')
+registerGoogle.addEventListener('click', function () {
+    document.getElementById('sound-wave').style.display = 'flex'
+    setTimeout(() => {
+        document.getElementById('sound-wave').style.display = 'none'
+        document.getElementById('login').style.display = 'none'
+        document.getElementById('sectionRegisterGoogle').style.display = 'block'
+    }, 2000);
+})
+
+
+// Control de segisterApple
+const registerApple = document.getElementById('registerApple')
+registerApple.addEventListener('click', function () {
+    document.getElementById('sound-wave').style.display = 'flex'
+    setTimeout(() => {
+        document.getElementById('sound-wave').style.display = 'none'
+        document.getElementById('login').style.display = 'none'
+        document.getElementById('sectionRegisterApple').style.display = 'block'
+    }, 2000);
 })
