@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
 
+/*Colores del navegador*/
+:root {
+    --primary: #0969DA;
+    --background: #24292F;
+    --gray: #847F90;
+    --white: #FCFCFC;
+    --navbar-height: 65px;
+}
+
+/*Colores del dropdown*/
+:root {
+    --primary: #625BFE;
+    --text: #0F192D;
+    --text-gray: #5A678C;
+    --gray: #c0bcff;
+    --error: #E3452F;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -131,14 +149,6 @@ body {
 }
 
 /*Estilo del navegador*/
-:root {
-    --primary: #0969DA;
-    --background: #24292F;
-    --gray: #847F90;
-    --white: #FCFCFC;
-    --navbar-height: 65px;
-}
-
 .menu__wrapper {
     display: flex;
     position: fixed;
@@ -167,7 +177,7 @@ body {
 
 .logo svg {
     fill: var(--white);
-} */
+}  */
 
 .navigation {
     display: flex;
@@ -180,10 +190,13 @@ body {
 
 .navigation>li {
     display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
     position: relative;
     cursor: pointer;
-    align-items: center;
+    align-items: end;
     height: 42px;
+    width: 800px;
 }
 
 .navigation>li>button>svg {
@@ -208,10 +221,10 @@ body {
     border: none;
     cursor: pointer;
     font-weight: 500;
-    gap: 4px;
+    gap: 5px;
     opacity: 1;
     align-items: center;
-    font-size: 14px;
+    font-size: 16px;
     flex-wrap: nowrap;
     white-space: nowrap;
     background: none;
@@ -371,7 +384,7 @@ body {
 
 
 @media (max-width: 600px) {
-    .hide {
+    .navigation {
         display: none;
     }
 
@@ -393,14 +406,6 @@ body {
 }
 
 /*Estilos del dropdown*/
-:root {
-    --primary: #625BFE;
-    --text: #0F192D;
-    --text-gray: #5A678C;
-    --gray: #c0bcff;
-    --error: #E3452F;
-}
-
 .navigation__group {
     display: flex;
     gap: 16px;

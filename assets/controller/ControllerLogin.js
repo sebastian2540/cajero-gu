@@ -38,15 +38,16 @@ loginButton.addEventListener('click', function () {
 
     let username = document.getElementById('username').value
     let password = document.getElementById('password').value
-    // const message = document.getElementById('message');
-    let intentos = 3
+    // co-nst message = document.getElementById('message');
+    let userAttempt = 3
 
-    while (intentos > 0) {
+    while (userAttempt > 0) {
         //Validación del Usuario 1
-        if (username == 'Administrador001') {
-            if (password == '1526') {
 
-                //Impresiones en consola
+        usuarios.forEach(function(user) {
+
+            if (user.usuario === username && user.contrasena === password) {
+
                 console.log('Inicio de sesión exitoso. ' + username)
 
                 //Configuración de alerta
@@ -60,15 +61,14 @@ loginButton.addEventListener('click', function () {
                     document.getElementById('sound-wave').style.display = 'none'
                     document.getElementById('login').style.display = 'none'
                     document.getElementById('panel').style.display = 'block'
-                }, 3000);
-                break;
-
+                }, 1000);
+                // break;
             } else {
-                intentos--
-                if (intentos > 0) {
+                userAttempt--
+                if (userAttempt > 0) {
 
                     //Impresiones en consola
-                    console.log('Datos incorrectos. Te quedan ' + intentos)
+                    console.log('Datos incorrectos. Te quedan ' + userAttempt)
                     console.log('Acceso denegado')
 
                     //Configuración de alerta
@@ -79,17 +79,18 @@ loginButton.addEventListener('click', function () {
                 } else {
 
                     //Impresiones en consola
-                    console.log('Has excedido el número máximo de intentos. Cuenta bloqueda.')
+                    console.log('Has excedido el número máximo de intentos. Cuenta bloqueda.❌')
                     console.log('Acceso denegado')
 
-                    //Configuración de alerta
+                    // //Configuración de alerta
                     const AlertConfig = document.getElementById('liveToastBloqueda')
                     const toastBloqueda = bootstrap.Toast.getOrCreateInstance(AlertConfig)
                     toastBloqueda.show()
 
+                    }
                 }
-            }
-        }
+        })
+
     }
 })
 
