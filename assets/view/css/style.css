@@ -398,6 +398,17 @@ body {
 }
 
 
+.navigation>li {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    position: relative;
+    cursor: pointer;
+    align-items: end;
+    height: 42px;
+    width: 800px;
+}
+
 @media (max-width: 600px) {
     .burger-menu {
         display: flex;
@@ -515,14 +526,14 @@ body {
     margin: 0px;
 }
 
-nav > ul {
+nav>ul {
     list-style-type: none;
     padding: 0px;
     margin: 0px;
     gap: 4px;
 }
 
-nav > ul > li {
+nav>ul>li {
     height: 40px;
     display: flex;
     flex-direction: row;
@@ -532,12 +543,12 @@ nav > ul > li {
     width: 100%;
 }
 
-nav > ul > li > img {
+nav>ul>li>img {
     height: 24px;
     width: 24px;
 }
 
-nav > ul > li:hover {
+nav>ul>li:hover {
     cursor: pointer;
     text-decoration: none;
 }
@@ -657,3 +668,4 @@ nav > ul > li:hover {
     left: 0;
     display: none;
 }
+

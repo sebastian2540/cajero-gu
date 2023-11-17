@@ -37,7 +37,7 @@
                     d="M23.98 70.49c.56-1.08.71-2.34 1.21-3.45c.5-1.11 1.59-2.14 2.79-1.95c1.11.18 1.8 1.29 2.21 2.33c.57 1.45.88 3 .92 4.56c.01.32-.01.67-.22.92c-.37.42-1.13.21-1.42-.27c-.29-.48-.22-1.09-.09-1.64c.62-2.55 2.62-4.72 5.11-5.54c.26-.09.53-.16.8-.11c.58.11.9.71 1.16 1.23c.61 1.19 1.35 2.32 2.2 3.35c.34.42.73.83 1.25.99c1.71.5 2.7-2.02 4.35-2.69c1.98-.8 3.91 1.29 6.01 1.68c3.07.57 4.7-1.82 7.39-2.43c.36-.08.75-.13 1.11-.03c.66.19 1.07.82 1.46 1.39c.91 1.34 2.21 2.66 3.83 2.67c1.03.01 1.98-.52 2.92-.97c3.33-1.59 7.26-2.25 10.74-1.03" />
             </svg>
         </h5>
-        
+
 
 
         <input type="text" name="username" id="username" class="controls" placeholder="Usuario" autocomplete="name">
@@ -48,11 +48,11 @@
 
         <div class="socials-row">
             <a href="#" title="Use Google" id="registerGoogle">
-                <img src="/assets/view/image/google.png" alt="Google">
+                <img src="./assets/view/image/google.png" alt="Google">
                 Sign up with Google
             </a>
             <a href="#" title="Use Apple" id="registerApple">
-                <img src="/assets/view/image/apple.png" alt="Apple">
+                <img src="./assets/view/image/apple.png" alt="Apple">
                 Sign up with Apple
             </a>
         </div>
@@ -308,16 +308,17 @@
     </div>
 
     <!--Alerta de acceso incorrecto login -->
-    <div class="toast-container position-fixed bottom-0 end-1 p-3">
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="liveToastIncorrecto" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
-            style="background: #F06565;">
+            style="background: #FFECB3;">
             <div class="toast-header">
-                <img src="./assets/view/image/error.png" class="rounded me-2" alt="error" height="20px" width="20px">
+                <img src="./assets/view/image/warning.png   " class="rounded me-2" alt="error" height="20px"
+                    width="20px">
                 <strong class="me-auto">Información</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body">
-                El usuario o contraseña no son incorrectos
+                El usuario o contraseña no son validos
             </div>
         </div>
     </div>
@@ -337,8 +338,11 @@
         </div>
     </div>
 
-    <!--Conexión del controller-->
+    <!--Conexión del ControllerLogin-->
     <script type="module" src="./assets/controller/ControllerLogin.js"></script>
+
+    <!--Conexión del ControllerOperationApp-->
+    <script type="module" src="./assets/controller/ControllerOperationsApp.js"></script>
 
     <!--Conexión de Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

@@ -1,5 +1,5 @@
 import { usuarios } from "../model/ModelLogin.js";
-console.log(usuarios);
+// console.log(usuarios);
 
 let inputs = document.querySelectorAll('.controls')
 inputs.forEach(function (input) {
@@ -35,63 +35,56 @@ function validarFormulario(e) {
 // Control del Inicio de Sesión
 let loginButton = document.getElementById('loginButton')
 loginButton.addEventListener('click', function () {
-
     let username = document.getElementById('username').value
     let password = document.getElementById('password').value
-    // co-nst message = document.getElementById('message');
-    let userAttempt = 3
+    let userAttempt = 0
 
-    while (userAttempt > 0) {
-        //Validación del Usuario 1
+    // while (userAttempt > 0) {
+    //Validación del Usuario 1
+    /* find o filter */
+    usuarios.some(function (user) {
 
-        usuarios.forEach(function(user) {
+        if (user.usuario === username && user.contrasena === password) {
+            console.table(user);
+            console.log('Inicio de sesión exitoso. ' + username)
 
-            if (user.usuario === username && user.contrasena === password) {
+            //Configuración de alerta
+            const AlertConfig = document.getElementById('liveToastCorrecto')
+            const toastCorrecto = bootstrap.Toast.getOrCreateInstance(AlertConfig)
+            toastCorrecto.show()
 
-                console.log('Inicio de sesión exitoso. ' + username)
+            //Control de ventanas
+            document.getElementById('sound-wave').style.display = 'flex'
+            setTimeout(() => {
+                document.getElementById('sound-wave').style.display = 'none'
+                document.getElementById('login').style.display = 'none'
+                document.getElementById('panel').style.display = 'block'
+            }, 1000);
+            
+            return true;
+        } else {
+            userAttempt++
+            // console.log('Prueba ' + userAttempt);
+            if (userAttempt >= 0) {
+                //Impresiones en consola
+                console.log('Datos incorrectos. Te quedan ' + userAttempt)
+                console.log('Acceso denegado')
 
                 //Configuración de alerta
-                const AlertConfig = document.getElementById('liveToastCorrecto')
-                const toastCorrecto = bootstrap.Toast.getOrCreateInstance(AlertConfig)
-                toastCorrecto.show()
-
-                //Control de ventanas
-                document.getElementById('sound-wave').style.display = 'flex'
-                setTimeout(() => {
-                    document.getElementById('sound-wave').style.display = 'none'
-                    document.getElementById('login').style.display = 'none'
-                    document.getElementById('panel').style.display = 'block'
-                }, 1000);
-                // break;
+                const AlertConfig = document.getElementById('liveToastIncorrecto')
+                const toastIncorrecto = bootstrap.Toast.getOrCreateInstance(AlertConfig)
+                toastIncorrecto.show()
             } else {
-                userAttempt--
-                if (userAttempt > 0) {
+                //Impresiones en consola
+                console.log('Has excedido el número máximo de intentos. Cuenta bloqueda.❌')
 
-                    //Impresiones en consola
-                    console.log('Datos incorrectos. Te quedan ' + userAttempt)
-                    console.log('Acceso denegado')
-
-                    //Configuración de alerta
-                    const AlertConfig = document.getElementById('liveToastIncorrecto')
-                    const toastIncorrecto = bootstrap.Toast.getOrCreateInstance(AlertConfig)
-                    toastIncorrecto.show()
-
-                } else {
-
-                    //Impresiones en consola
-                    console.log('Has excedido el número máximo de intentos. Cuenta bloqueda.❌')
-                    console.log('Acceso denegado')
-
-                    // //Configuración de alerta
-                    const AlertConfig = document.getElementById('liveToastBloqueda')
-                    const toastBloqueda = bootstrap.Toast.getOrCreateInstance(AlertConfig)
-                    toastBloqueda.show()
-
-                    }
-                }
-        })
-
-    }
+                //Configuración de alerta
+                const AlertConfig = document.getElementById('liveToastBloqueda')
+                const toastBloqueda = bootstrap.Toast.getOrCreateInstance(AlertConfig)
+                toastBloqueda.show()
+            }
+        }
+    })
 })
 
 //Control del profile
@@ -120,7 +113,7 @@ cerrarSesion.addEventListener('click', function () {
         document.getElementById('sound-wave').style.display = 'none'
         document.getElementById('login').style.display = 'block'
         document.getElementById('panel').style.display = 'none'
-    }, 3000);
+    }, 1000);
 })
 
 // Control de registerGoogle
@@ -131,7 +124,7 @@ registerGoogle.addEventListener('click', function () {
         document.getElementById('sound-wave').style.display = 'none'
         document.getElementById('login').style.display = 'none'
         document.getElementById('sectionRegisterGoogle').style.display = 'block'
-    }, 2000);
+    }, 1000);
 })
 
 
@@ -143,5 +136,5 @@ registerApple.addEventListener('click', function () {
         document.getElementById('sound-wave').style.display = 'none'
         document.getElementById('login').style.display = 'none'
         document.getElementById('sectionRegisterApple').style.display = 'block'
-    }, 2000);
+    }, 1000);
 })
