@@ -669,3 +669,53 @@ nav>ul>li:hover {
     display: none;
 }
 
+/*section CheckBalance, Transfer, Record*/
+.sectionCheckBalance {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.sectionTransfer {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.sectionRecord {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.sectionWithdraw {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.sectionTransfer {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}

@@ -75,13 +75,13 @@
         <div class="background">
             <nav class="menu__wrapper">
                 <div class="menu__bar">
-                    <a href="#" title="Logo" class="logo">
+                    <a href="#" title="Logo" class="logo" id="logo">
                         <img src="./assets/view/image/icon-atm.png" alt="">
                     </a>
 
                     <ul class="navigation">
                         <li>
-                            <button>
+                            <button id="BcheckBalance">
                                 Consultar Saldo
                                 <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
                                     data-view-component="true" class="octicon octicon-package color-fg-subtle mr-1">
@@ -110,7 +110,7 @@
                                 </svg>
                             </button>
 
-                            <button>
+                            <button id="transfer">
                                 Transferir
                                 <!-- <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
                                     data-view-component="true"
@@ -175,7 +175,7 @@
 
                             </button>
 
-                            <button>
+                            <button id="record">
                                 Consignar
                                 <!-- <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
                                     data-view-component="true" class="octicon octicon-package color-fg-subtle mr-3">
@@ -197,7 +197,7 @@
                                 </svg>
                             </button>
 
-                            <button>
+                            <button id="withdraw">
                                 Retirar
                                 <!-- <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
                                     data-view-component="true" class="octicon octicon-package color-fg-subtle mr-3">
@@ -220,7 +220,7 @@
 
                             </button>
 
-                            <button>
+                            <button id="movements">
                                 Movimientos
                                 <!-- <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24"
                                     data-view-component="true" class="octicon octicon-workflow color-fg-subtle mr-3">
@@ -280,7 +280,62 @@
                     </button> -->
             </nav>
         </div>
+
+        <!--Carousel panel-->
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin: 100px; width: 1200px;">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="./assets/view/image/publicatm1.jpg" class="d-block w-100" alt="...">
+                    
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="./assets/view/image/publicatm2.jpg" class="d-block w-100" alt="...">
+                    
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="./assets/view/image/publicatm3.png" class="d-block w-100" alt="...">
+                    
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </main>
+
+    <!--Section panel-->
+    <section id="sectionCheckBalance" class="sectionCheckBalance">
+        <h1 style="margin: 100px;">Consultar saldo</h1>
+    </section>
+
+    <section id="sectionTransfer" class="sectionTransfer">
+        <h1 style="margin: 100px;">Transferir</h1>
+    </section>
+
+    <section id="sectionRecord" class="sectionRecord">
+        <h1 style="margin: 100px;">Consignar</h1>
+    </section>
+
+    <section id="sectionWithdraw" class="sectionWithdraw">
+        <h1 style="margin: 100px;">Retirar</h1>
+    </section>
+
+    <section id="sectionMovements" class="sectionWithdraw">
+        <h1 style="margin: 100px;">Movimientos</h1>
+    </section>
 
     <!--Spinner Loading-->
     <div id="sound-wave" class="sound-wave">

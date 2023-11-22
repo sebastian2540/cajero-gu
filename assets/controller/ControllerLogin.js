@@ -127,8 +127,7 @@ registerGoogle.addEventListener('click', function () {
     }, 1000);
 })
 
-
-// Control de segisterApple
+// Control de registerApple
 const registerApple = document.getElementById('registerApple')
 registerApple.addEventListener('click', function () {
     document.getElementById('sound-wave').style.display = 'flex'
