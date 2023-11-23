@@ -20,8 +20,27 @@ logo.addEventListener('click', function () {
 /*Control BcheckBalance*/
 const BcheckBalance = document.getElementById('BcheckBalance')
 BcheckBalance.addEventListener('click', function () {
+    
+    checkBalance.some(function(item){
+        let account = document.createElement('p')
+        let number = document.createElement('p')        
+        let balance = document.createElement('p')
+        let card = document.createElement('article')
+
+        account.textContent = item.account
+        number.textContent = item.number
+        balance.textContent = item.balance
+        
+
+        card.classList.add('card')
+        card.append(account,number,balance)
+        document.getElementById('sectionCheckBalance').append(card)
+
+    })
+
     document.getElementById('sound-wave').style.display = 'flex'
     setTimeout(() => {
+        // document.getElementById('sectionCheckBalance').innerHTML = ''
         document.getElementById('sound-wave').style.display = 'none'
         document.getElementById('login').style.display = 'none'
         document.getElementById('sectionCheckBalance').style.display = 'block'
@@ -39,7 +58,7 @@ transfer.addEventListener('click', function () {
     document.getElementById('sound-wave').style.display = 'flex'
     setTimeout(() => {
         document.getElementById('sound-wave').style.display = 'none'
-        document.getElementById('login').style.display = 'none' 
+        document.getElementById('login').style.display = 'none'
         document.getElementById('sectionTransfer').style.display = 'block'
         document.getElementById('carouselExampleDark').style.display = 'none'
         document.getElementById('sectionCheckBalance').style.display = 'none'
@@ -96,3 +115,5 @@ movements.addEventListener('click', function () {
         document.getElementById('sectionWithdraw').style.display = 'none'
     }, 500);
 })
+
+

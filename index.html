@@ -282,7 +282,8 @@
         </div>
 
         <!--Carousel panel-->
-        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin: 100px; width: 1200px;">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel"
+            style="margin: 100px; width: 1200px;">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
@@ -294,31 +295,79 @@
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="2000">
                     <img src="./assets/view/image/publicatm1.jpg" class="d-block w-100" alt="...">
-                    
+
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
                     <img src="./assets/view/image/publicatm2.jpg" class="d-block w-100" alt="...">
-                    
+
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
                     <img src="./assets/view/image/publicatm3.png" class="d-block w-100" alt="...">
-                    
+
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+
+        <footer>
+            
+            <div class="footer-wrapper">                
+                <div class="footer-bottom">
+                    <small>© Cajero GU - Grupo Unión <span id="year"></span>, Reservados todos los derechos</small>
+                    <span class='social-links'>
+                        <a href="#" title="Instagram">
+                            <img src="./assets/view/image/instagram.svg" alt='Instagram'>
+                        </a>
+                        <a href="#" title="Linkedin">
+                            <img src="./assets/view/image/linkedin.svg" alt='Linkedin'>
+                        </a>
+                        <a href="#" title="Twitter">
+                            <img src="./assets/view/image/twitter.svg" alt='Twitter'>
+                        </a>
+                        <a href="#" title="Youtube">
+                            <img src="./assets/view/image/youtube.svg" alt='YouTube'>
+                        </a>
+                        <a href="#" title="GitHub">
+                            <img src="./assets/view/image/github.svg" alt='GitHub'>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </footer>
     </main>
 
     <!--Section panel-->
     <section id="sectionCheckBalance" class="sectionCheckBalance">
-        <h1 style="margin: 100px;">Consultar saldo</h1>
+        <div class="container" style="margin: 80px">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card" style="width: 230px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Cuentas de Ahorros y Corriente</h5>
+                            <h5 class="card-title">850-255874-35</h5>
+                            <p class="card-text">Saldo Disponible</p>
+                            <p class="card-text"><strong>$ 100.000,00</strong></p>
+                            <button type="button" class="btn btn-warning position-relative">
+                                Conoce más de tu cuenta
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                                    <span class="visually-hidden">New alerts</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="sectionTransfer" class="sectionTransfer">
@@ -333,7 +382,7 @@
         <h1 style="margin: 100px;">Retirar</h1>
     </section>
 
-    <section id="sectionMovements" class="sectionWithdraw">
+    <section id="sectionMovements" class="sectionMovements">
         <h1 style="margin: 100px;">Movimientos</h1>
     </section>
 
